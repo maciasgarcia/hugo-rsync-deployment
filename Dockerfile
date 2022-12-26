@@ -19,8 +19,7 @@ RUN apk add --no-cache --upgrade --no-progress \
         curl \
         bash
 
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - 
-RUN apt-get install -y nodejs
+RUN apk add --update nodejs npm
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
