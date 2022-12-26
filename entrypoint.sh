@@ -9,7 +9,7 @@ fi
 
 cd "${GITHUB_WORKSPACE}"
 
-if [[ "${BUILD_MODE}" == 'hugo']]; then
+if [[ "${BUILD_MODE}" == 'hugo' ]]; then
   hugo version
   hugo $1
 fi
