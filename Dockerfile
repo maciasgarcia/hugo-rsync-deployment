@@ -15,9 +15,10 @@ LABEL "homepage"="https://ronvanderheijden.nl/"
 RUN apk add --no-cache --upgrade --no-progress \
         hugo \
         openssh \
-        rsync
+        rsync \
+        curl
 
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - 
+RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - 
 RUN apt-get install -y nodejs
 
 ADD entrypoint.sh /
