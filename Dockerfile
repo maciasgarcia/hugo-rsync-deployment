@@ -17,6 +17,9 @@ RUN apk add --no-cache --upgrade --no-progress \
         openssh \
         rsync
 
+RUN curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - 
+RUN apt-get install -y nodejs
+
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
