@@ -16,7 +16,8 @@ RUN apk add --no-cache --upgrade --no-progress \
         hugo \
         openssh \
         rsync \
-        curl
+        curl \
+        bash
 
 RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash - 
 RUN apt-get install -y nodejs
