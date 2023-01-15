@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/sh 
 
 set -euo pipefail
 
@@ -27,11 +27,9 @@ chmod 600 "${HOME}/.ssh/id_rsa_deploy"
 
 rsync --version
 sh -c "
-# rsync -r "${GITHUB_WORKSPACE}/public/" -e 'ssh -i ${HOME}/.ssh/id_rsa_deploy -o StrictHostKeyChecking=no -p ${VPS_DEPLOY_PORT}' \
-#   ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
-# "
-rsync -r "${GITHUB_WORKSPACE}/public/" -e 'ssh -i ${HOME}/.ssh/id_rsa_deploy -p ${VPS_DEPLOY_PORT}' \
+rsync -r "${GITHUB_WORKSPACE}/public/" -e 'ssh -i ${HOME}/.ssh/id_rsa_deploy -o StrictHostKeyChecking=no -p ${VPS_DEPLOY_PORT}' \
   ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
 "
+
 
 exit 0
