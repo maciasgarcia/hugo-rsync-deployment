@@ -1,4 +1,5 @@
 FROM alpine:3.14.0
+FROM ubuntu:22.04
 
 LABEL "name"="Hugo rsync deployment"
 LABEL "maintainer"="Ron van der Heijden <r.heijden@live.nl>"
@@ -12,14 +13,16 @@ LABEL "com.github.actions.color"="blue"
 LABEL "repository"="https://github.com/maciasgarcia/hugo-rsync-deployment"
 LABEL "homepage"="https://ronvanderheijden.nl/"
 
-RUN apk add --no-cache --upgrade --no-progress \
-        hugo \
-        openssh \
-        rsync \
-        curl \
-        bash
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y hugo \
+                       openssh \
+                       rsync \
+                       curl \
+                       bash
+                   
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+        apt-get install -y nodejs
 
-RUN apk add --update nodejs=16.12.1 npm
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
