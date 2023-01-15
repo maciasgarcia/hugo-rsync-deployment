@@ -15,6 +15,7 @@ if [[ "${BUILD_MODE}" == 'hugo' ]]; then
 fi
 
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
+  cd maciasgarciaweb
   npm install
   npm run build
 fi
