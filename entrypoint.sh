@@ -8,6 +8,7 @@ if [[ -z "$GITHUB_WORKSPACE" ]]; then
 fi
 
 cd "${GITHUB_WORKSPACE}"
+export HOME=$(echo $GITHUB_WORKSPACE)
 
 if [[ "${BUILD_MODE}" == 'hugo' ]]; then
   hugo version
@@ -15,7 +16,7 @@ if [[ "${BUILD_MODE}" == 'hugo' ]]; then
 fi
 
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
-  export HOME=$GITHUB_WORKSPACE
+  
   npm install
   npm run build
 fi
