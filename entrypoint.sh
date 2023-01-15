@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-set -euo pipefail
+set -eu
 
 if [[ -z "$GITHUB_WORKSPACE" ]]; then
   echo "Set the GITHUB_WORKSPACE env variable."
