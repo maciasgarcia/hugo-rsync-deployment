@@ -15,7 +15,7 @@ if [[ "${BUILD_MODE}" == 'hugo' ]]; then
 fi
 
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
-  echo $HOME
+  export HOME=$GITHUB_WORKSPACE
   npm install
   npm run build
 fi
