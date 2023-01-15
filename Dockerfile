@@ -19,7 +19,7 @@ RUN apk add --no-cache --upgrade --no-progress \
         curl \
         bash
 
-RUN apk add --update nodejs=16.12.1 npm
+RUN apk add --update nodejs-current npm
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
