@@ -15,8 +15,7 @@ if [[ "${BUILD_MODE}" == 'hugo' ]]; then
 fi
 
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
-  echo $(ls)
-  echo $(pwd)
+  echo $HOME
   npm install
   npm run build
 fi
