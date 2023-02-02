@@ -13,7 +13,7 @@ LABEL "repository"="https://github.com/maciasgarcia/hugo-rsync-deployment"
 LABEL "homepage"="https://ronvanderheijden.nl/"
 
 RUN apt update && apt upgrade -y
-RUN apt install -y hugo rsync curl
+RUN apt install -y hugo rsync curl sudo
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 
 #RUN curl -fsSL https://deb.nodesource.com/setup_16.x 
