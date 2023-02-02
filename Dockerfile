@@ -15,9 +15,9 @@ LABEL "homepage"="https://ronvanderheijden.nl/"
 RUN apt update && apt upgrade -y
 RUN apt install -y hugo rsync curl
 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x 
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
-RUN apt install -y nodejs
+//RUN curl -fsSL https://deb.nodesource.com/setup_16.x 
+//RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+//RUN apt install -y nodejs
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
