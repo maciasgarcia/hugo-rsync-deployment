@@ -18,7 +18,7 @@ fi
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -c "apt install -y nodejs"
   sudo apt install -y npm
-  npm install
+  npm ci
   npm run build
 fi
 
