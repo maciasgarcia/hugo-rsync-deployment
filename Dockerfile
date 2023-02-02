@@ -13,7 +13,7 @@ LABEL "repository"="https://github.com/maciasgarcia/hugo-rsync-deployment"
 LABEL "homepage"="https://ronvanderheijden.nl/"
 
 RUN apt update && apt upgrade -y
-RUN apt install -y hugo openssh rsync curl
+RUN apt install -y hugo rsync curl
 
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
         apt-get install -y nodejs
