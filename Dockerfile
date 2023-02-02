@@ -15,8 +15,7 @@ LABEL "homepage"="https://ronvanderheijden.nl/"
 RUN apt update && apt upgrade -y
 RUN apt install -y hugo rsync curl
 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
-        apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash apt-get install -y nodejs
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
