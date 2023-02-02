@@ -16,7 +16,8 @@ if [[ "${BUILD_MODE}" == 'hugo' ]]; then
 fi
 
 if [[ "${BUILD_MODE}" == 'doks' ]]; then
-  
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+  apt install -y nodejs
   npm install
   npm run build
 fi
